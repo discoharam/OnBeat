@@ -1,6 +1,9 @@
 ﻿# Base Image with CUDA 12.1 (Compatible with Torch 2.1)
 FROM pytorch/pytorch:2.1.2-cuda12.1-cudnn8-runtime
 
+# FIX: Set the Debian frontend to noninteractive to prevent prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Set working directory
 WORKDIR /app
 
