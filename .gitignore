@@ -1,0 +1,29 @@
+﻿# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# --- Python (Backend & AI Worker) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.env
+*.log
+*.sqlite
+*.db
+backend/media/
+
+# --- Node / React (Frontend) ---
+node_modules/
+dist/
+build/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+frontend/package-lock.json # Optional: Keep if you want to lock versions, ignore if you want fresh installs

@@ -1,0 +1,61 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 font-sans transition-colors duration-300;
+  }
+
+  /* Dark Mode Override */
+  .dark body {
+    @apply bg-zinc-950 text-white;
+  }
+
+  /* --- Global Minimal Scrollbar --- */
+  
+  /* 1. Size */
+  ::-webkit-scrollbar {
+    width: 6px;  /* Vertical width */
+    height: 6px; /* Horizontal height */
+  }
+
+  /* 2. Track (Background) - Hidden/Transparent */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px; /* Tiny margin to float it */
+  }
+
+  /* 3. Thumb (The Pill) */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-300/50 dark:bg-white/10 rounded-full backdrop-blur-sm transition-colors;
+  }
+
+  /* 4. Hover State */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-400/80 dark:bg-white/30;
+  }
+
+  /* Firefox Support */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+  .dark * {
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+  html:not(.dark) * {
+    scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+  }
+}
+
+@layer utilities {
+  /* Utility to completely hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
